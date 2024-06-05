@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  background-color: #eee;
+}
+
+.drop-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;  
+  background-color: #eee;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+}
+
+.expand-button {
+  position: relative;
+  background-color: #eee;
+  height: 30px;
+  width: 30px;
+}
+
+.expand-button::after {
+  position: absolute;
+  content: ">";
+  transform: rotate(90deg);
+  top: 0;
+  left: 0;
+}

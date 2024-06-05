@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-import { genre, camera } from '../data';
+import { genres, cameras } from '../data';
+
+import SelectList from './components/SelectList';
 
 export default () => {
+  const randomizeGenres = useRef(null);
 
   return (
-    <>
-      <select>
-        <option>{genre[0]}</option>
-      </select>
-      <select>
-        <option>{camera[0]}</option>
-      </select>
-    </>
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+      <SelectList dataset={genres} buttonRef={randomizeGenres}/>
+    </div>
   );
 }

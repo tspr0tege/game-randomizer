@@ -1,4 +1,4 @@
-export const genre = [
+export const genres = [
     "Adventure",
     "Action",
     "Arcade",
@@ -20,7 +20,7 @@ export const genre = [
     "Versus",
   ];
 
-  export const camera = [
+  export const cameras = [
     "cinematic",
     "first-person",
     "horizontal scroll",
@@ -31,7 +31,7 @@ export const genre = [
     "top-down",
     "veritcal scroll",
   ];
-  
+
 const others ={  
   traversal: [
     "locked scroll / no going back",
