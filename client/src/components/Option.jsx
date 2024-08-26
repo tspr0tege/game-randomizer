@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 
-export default ({ text, index }) => {
+export default ({ text, index, setFocus, setShowList }) => {
   const [checked, setChecked] = useState(true);
 
+  function handleClick() {
+    setFocus(index);
+    setShowList(false);
+  }
+
   return(
-    <label key={index} data-index={index}>
+    <div data-index={index}>
       <input 
         style={{marginRight: '.5em'}}
         type="checkbox" 
         checked={checked}
         onChange={() => {setChecked(!checked)}}
       />
-      {text}
-    </label>
+      <p className="option-text" onClick={handleClick}>{text}</p>
+    </div>
   );
 }

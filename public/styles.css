@@ -1,38 +1,128 @@
+:root, [data-theme='dark'] {
+  --background-color: #222;
+  --primary-color: #444;
+  --secondary-color: #333;
+  --tertiary-color: #222;
+
+  --font-color: #ddd;
+  --font-color-disabled: #00000055;
+}
+
+[data-theme='light'] {
+  --background-color: #ddd;
+  --primary-color: #fff;
+  --secondary-color: #eee;
+  --tertiary-color: #ddd;
+
+  --font-color: '';
+  --font-color-disabled: '';
+}
+
+html {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+header {
+  min-height: 600px;
+}
+
+.bookend {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookend > button {
+  background-color: #46d;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  height: 60px;
+  width: 90px;
+  color: var(--font-color);
+  font-weight: 600;
+  margin-right: 20px;
 }
 
 .custom-dropdown {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  background-color: #eee;
+  background-color: var(--primary-color);
 }
 
 .drop-list {
   display: flex;
   flex-direction: column;
   position: absolute;  
-  background-color: #eee;
+  background-color: var(--primary-color);
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
   position: absolute;
   left: 0;
+  width: calc(100% - 30px);
+  white-space: nowrap;
 }
 
 .expand-button {
   position: relative;
-  background-color: #eee;
+  background-color: var(--primary-color);
   height: 30px;
   width: 30px;
+  border: none;
 }
 
 .expand-button::after {
   position: absolute;
   content: ">";
-  transform: rotate(90deg);
-  top: 0;
-  left: 0;
+  font-family: monospace;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); 
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #777;
+}
+
+.option-text {
+  display: inline;
+  cursor: default;
+}
+
+.list-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: .5em;
+}
+
+.locked-checkbox {
+  display: none;
+}
+
+.locked-checkbox ~ svg {
+  font-size: 30px;
+  fill: var(--font-color);
+}
+
+.dice-button {
+  font-size: 40px;
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  fill: var(--font-color);
+}
+
+.dice-button:disabled {
+  fill: var(--font-color-disabled);
 }
